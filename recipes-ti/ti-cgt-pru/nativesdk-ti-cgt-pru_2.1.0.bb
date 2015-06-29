@@ -7,7 +7,7 @@ S = "${WORKDIR}/ti-cgt-pru_${PV}"
 
 SRC_URI = "file://ti-cgt-pru_${PV}.tar.bz2"
 
-inherit native
+inherit nativesdk
 
 do_install() {
     # Binary tools
@@ -44,5 +44,5 @@ do_install() {
 }
 
 FILES_${PN} += "${datadir}/ti/*"
+FILES_${PN}-dbg += "${datadir}/ti/cgt-pru/bin/.debug"
 
-BBCLASSEXTEND = "nativesdk"
